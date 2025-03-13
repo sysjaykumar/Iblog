@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.html import format_html
-
+from froala_editor.fields import FroalaField
 
 # Create your models here.
 
@@ -25,7 +25,7 @@ class Post(models.Model):
     from tinymce.models import HTMLField
     post_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
-    content = HTMLField()
+    content = FroalaField()
     url = models.CharField(max_length=100)
     cat=models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post/')

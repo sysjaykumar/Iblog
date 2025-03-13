@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,55 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+
 
     <title>{% block title %} {% endblock %}</title>
 </head>
+
 <body>
     {% include 'header.html' %}
-    {% block content %} 
+    {% block content %}
     {% endblock %}
+    {% include 'footer.html' %}
+    <script>
+        M.AutoInit();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 
     <script>
-          M.AutoInit();
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                autoplay: true,
+                nav: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,   // Corrected from 'item' to 'items'
+                        nav: true
+                    },
+                    600: {
+                        items: 3,   // Corrected from 'item' to 'items'
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,   // Corrected from 'item' to 'items'
+                        nav: true
+                    }
+                }
+            });
+        });
+
     </script>
 </body>
+
 </html>
