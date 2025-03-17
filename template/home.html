@@ -2,6 +2,7 @@
 {% block title %}Welcome To IBlog {% endblock %}
 
 {% block content %}
+
 <div class="costum-container">
 
     <!-- Set up your HTML -->
@@ -29,9 +30,9 @@
 </div>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col s12">
+<div class="container" style="height:auto;overflow: visible;">
+    <div class="row"style="height:auto;">
+        <div class="col s12" >
 
             {% for p in posts %}
             <div class="row">
@@ -54,6 +55,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
